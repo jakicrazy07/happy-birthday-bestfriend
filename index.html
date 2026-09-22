@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>happy birthday bestieku🌟</title>
+
+  <style>
+    body {
+        margin:0;
+        background:#000;
+        color:#d8b4fe; /* warna ungu pastel lembut dominan */
+        font-family:Arial,sans-serif;
+        text-align:center;
+        overflow-x: hidden;
+    }
+
+    #welcome {
+        height:100vh;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+    }
+
+    #welcome h1 {
+        font-size:80px;
+        margin:0;
+    }
+
+    #welcome h2 {
+        font-size:35px;
+    }
+
+    button {
+        padding:15px 40px;
+        border:none;
+        border-radius:50px;
+        font-size:18px;
+        font-weight:bold;
+        background:#c084fc;
+        color:white;
+        cursor:pointer;
+        box-shadow:0 0 20px #c084fc;
+        animation: pulse 2s infinite;
+        transition: transform 0.2s;
+    }
+
+    button:active {
+        transform: scale(0.95);
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); box-shadow: 0 0 20px #c084fc; }
+        50% { transform: scale(1.05); box-shadow: 0 0 30px #e9d5ff; }
+        100% { transform: scale(1); box-shadow: 0 0 20px #c084fc; }
+    }
+
+    #content {
+        padding:30px 10px;
+    }
+
+    #content h1 {
+        font-size: 30px;
+        text-transform: lowercase;
+        margin-bottom: 20px;
+    }
+
+    img {
+        width:250px;
+        border-radius:20px;
+        box-shadow:0 0 25px #c084fc;
+        margin-top:20px;
+    }
+
+    .gallery {
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:15px;
+        padding:20px 10px;
+    }
+
+    .gallery img {
+        width: 85%;
+        max-width: 140px;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 0 12px #c084fc;
+        margin: auto;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:active, .gallery img:hover {
+        transform: scale(1.06);
+        box-shadow: 0 0 25px #e9d5ff;
+    }
+
+    @media screen and (orientation: landscape) {
+        .gallery {
+            grid-template-columns:1fr 1fr 1fr;
+            gap: 20px;
+        }
+        .pesan {
+            max-width:900px;
+        }
+    }
+
+    .pesan {
+        max-width:700px;
+        margin:auto;
+        padding:10px;
+        font-size:17px;
+        line-height:1.8;
+        text-align: left;
+        text-transform: lowercase;
+    }
+
+    .pesan h2 {
+        text-align: center;
+    }
+
+    #musicBtn {
+        position:fixed;
+        left:20px;
+        bottom:20px;
+        width:55px;
+        height:55px;
+        border-radius:50%;
+        border:none;
+        background:#c084fc;
+        color:white;
+        font-size:22px;
+        box-shadow:0 0 15px #c084fc;
+        z-index:999;
+        animation: none;
+    }
+
+    .flower {
+        position:fixed;
+        top:-10px;
+        font-size:20px;
+        animation:fall linear forwards;
+        pointer-events:none;
+        z-index:1;
+    }
+
+    @keyframes fall {
+        to {
+            transform:translateY(110vh) rotate(360deg);
+        }
+    }
+
+    .pesan-akhir {
+        margin-top:40px;
+        padding:20px;
+        border:2px solid #c084fc;
+        border-radius:20px;
+        background:rgba(192, 132, 252, 0.04);
+        backdrop-filter: blur(5px);
+        text-align: left;
+        text-transform: lowercase;
+        box-shadow: 0 0 15px rgba(192, 132, 252, 0.15);
+    }
+
+    .pesan-akhir h2 {
+        color:#d8b4fe;
+        margin-bottom:15px;
+        text-align: center;
+    }
+
+    .pesan-akhir p {
+        line-height:1.8;
+    }
+
+    .calendar-box {
+        max-width:300px;
+        margin:20px auto 35px auto;
+        padding:12px 15px;
+        border-radius:20px;
+        background:rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(8px);
+        border:1px solid #c084fc;
+        box-shadow:0 0 20px rgba(192, 132, 252, 0.2);
+        text-align: center;
+    }
+
+    .calendar-header {
+        font-size:18px;
+        font-weight:bold;
+        margin-bottom:10px;
+        color:#d8b4fe;
+        letter-spacing: 1px;
+    }
+
+    .calendar-grid {
+        display:grid;
+        grid-template-columns:repeat(7,1fr);
+        gap:4px;
+        text-align:center;
+        font-size: 13px;
+    }
+
+    /* merapikan warna teks hari & angka tanggal agar seragam ungu */
+    .calendar-grid div {
+        padding:5px 2px;
+        color:#d8b4fe;
+    }
+
+    /* bulatan tanggal 29 dibuat kontras */
+    .birthday {
+        background:#c084fc !important;
+        color:black !important; /* memaksa angka 29 tetap hitam pekat di dalam bulatan */
+        border-radius:50%;
+        font-weight:bold;
+        box-shadow:0 0 12px #c084fc;
+    }
+
+    .calendar-box p {
+        font-size: 12px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="welcome">
+    <h1>🎁</h1>
+    <h2>open your gift</h2>
+    <button onclick="openGift()">buka</button>
+  </div>
+
+  <div id="content" style="display:none;">
+    <h1>happy birthday bestie! 🎂✨</h1>
+
+    <div class="pesan">
+      <h2>untuk kamu 🌟</h2>
+      
+      <div class="calendar-box">
+        <div class="calendar-header">✨ september 2026 ✨</div>
+        <div class="calendar-grid">
+          <div>su</div><div>mo</div><div>tu</div><div>we</div><div>th</div><div>fr</div><div>sa</div>
+          <div></div><div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div>
+          <div>11</div><div>12</div><div>13</div><div>14</div><div>15</div><div>16</div><div>17</div>
+          <div>18</div><div>19</div><div>20</div><div>21</div><div>22</div><div>23</div><div>24</div>
+          <div>25</div><div>26</div><div>27</div><div>28</div>
+          
+          <div class="birthday">29</div>
+          
+          <div>30</div>
+        </div>
+        <p>⭐ the day my favorite online friend was born ⭐</p>
+      </div>
+
+      <p>
+        selamat ulang tahun yaa bestie! semoga semua keinginanmu di tahun ini tercapai, selalu dikasih kesehatan, kebahagiaan, panjang umur, dan dilancarkan segala urusanmu kedepannya.
+      </p>
+
+      <p>
+        hari ini adalah hari yang spesial karena kamu lahir ke dunia. terima kasih yaa sudah bertahan sejauh ini melewati banyak hal-hal hebat. kamu itu orang yang seru dan berharga banget, jangan pernah merasa sendirian ya?
+      </p>
+
+      <p>
+        makasi yaa sudah hadir di hidup aku. jujur aku seneng banget punya temen virtual kayak kamu. meskipun kita cuma sebatas ketikan di room chat dan terhalang jarak karena belum pernah ketemu langsung, kamu selalu bisa jadi alasan aku bahagia lewat obrolan random kita.
+      </p>
+
+      <p>
+        oh iyaa, selalu jadi diri kamu sendiri ya? karena aku lebih suka kalau kamu tampil apa adanya tanpa jaim. gak perlu terlalu dengerin kata orang lain yang gak penting buat hidup kamu.
+      </p>
+
+      <p>
+        tetap tersenyum, nikmati hari spesialmu ini dengan penuh tawa. semoga suatu hari nanti kalau ada waktu dan kesempatan, kita bisa beneran ketemu langsung yaa!
+      </p>
+    </div>
+
+    <h2 style="text-transform: lowercase;">ini dia si birthday girl alert! 📸</h2>
+    <div class="gallery">
+      <img src="foto1.png">
+      <img src="foto2.png">
+      <img src="foto3.png">
+      <img src="foto4.png">
+      <img src="foto5.png">
+      <img src="foto6.png">
+    </div>
+
+    <div class="pesan-akhir">
+      <h2>💌 pesan terakhir</h2>
+      <p>terima kasih banyak sudah mau berteman dan meluangkan waktumu yang berharga buat dengerin keluh kesahku selama ini.</p>
+      <p>semoga semua hal baik selalu datang menghampiri kamu, dan semoga semua impian indah yang kamu simpan rapi pelan-pelan bisa terwujud satu per satu yaa.</p>
+      <p>tetap jadi sahabat virtual yang gokil yang selalu aku kenal, selalu bahagia di setiap harinya, dan jangan pernah lupa untuk tersenyum hari ini. ✨</p>
+      <p>happy birthday sahabat terbaikku! 🎂🎉</p>
+    </div>
+
+  </div>
+
+  <audio id="musik" loop>
+    <source src="lagu.mp3" type="audio/mpeg">
+  </audio>
+  <button id="musicBtn" onclick="toggleMusic()">🎵</button>
+
+  <script>
+    function openGift(){
+      document.getElementById("welcome").style.display="none";
+      document.getElementById("content").style.display="block";
+      
+      let music = document.getElementById("musik");
+      if (music) {
+        music.play().catch(function(error) {
+          console.log("Autoplay diblokir browser, musik siap diputar manual:", error);
+        });
+      }
+    }
+
+    function toggleMusic(){
+      let music=document.getElementById("musik");
+      if(music.paused){
+        music.play().catch(e => console.log(e));
+      }else{
+        music.pause();
+      }
+    }
+
+    setInterval(() => {
+      let flower=document.createElement("div");
+      flower.className="flower";
+      flower.innerHTML="🌸";
+      flower.style.left=Math.random()*100+"vw";
+      flower.style.animationDuration=(Math.random()*5+5)+"s";
+      document.body.appendChild(flower);
+      setTimeout(()=>{
+        flower.remove();
+      },10000);
+    }, 500);
+  </script>
+</body>
+</html>
